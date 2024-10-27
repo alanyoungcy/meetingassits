@@ -18,6 +18,10 @@ class MeetingSummaryRequest(BaseModel):
 
 @app.post("/transcribe/")
 async def transcribe_audio(file: UploadFile = File(...)):
+    # Ensure the file is a WAV file
+    if file.content_type != 'audio/wav':
+        return {"error": "Invalid file type. Please upload a WAV file."}
+    
     # Process the file for transcription
     audio_data = await file.read()
     transcription = model.transcribe(audio_data)

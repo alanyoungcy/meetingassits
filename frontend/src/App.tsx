@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
-import { FileAudio, Upload, Loader } from 'lucide-react';
+import { FileAudio, Loader } from 'lucide-react';
 import AudioRecorder from './components/AudioRecorder';
 import DocumentUpload from './components/DocumentUpload';
 import MinutesTemplate from './components/MinutesTemplate';
